@@ -1,0 +1,317 @@
+[
+  {
+    "id": "a-clockwork-orange-london-1971",
+    "primary_location": {
+      "city": "London",
+      "country": "United Kingdom",
+      "region": "Greater London",
+      "coordinates": [51.5074, -0.1278]
+    },
+    "additional_locations": [],
+    "year_set": 1971,
+    "year_released": 1971,
+    "location_thesis": "London is the setting, Alex and his crew terrorize the city, committing heinous acts of violence. This film is an unsettling look into the minds of a depraved individual, and the society that created him.",
+    "film": {
+      "title": "A Clockwork Orange",
+      "director": "Stanley Kubrick",
+      "runtime_minutes": 136,
+      "language": "English",
+      "aspect_ratio": "1.66:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "London in 1971 — post-war austerity, rise of the youth counterculture, Britain grappling with its changing identity.",
+      "cultural_moment": "Kubrick's adaptation of Anthony Burgess's novel ignited controversy and debate, becoming a flashpoint for discussions about violence, free will, and societal control.",
+      "why_it_matters": "The film's exploration of free will and societal control resonated deeply with audiences, sparking conversations about the nature of morality and the role of the state. Its influence can be seen in countless films that explore similar themes, and its imagery has become iconic in popular culture.",
+      "formal_innovation": "Kubrick's innovative use of cinematography, production design, and music created a visually stunning and thematically rich experience. The film's innovative use of music, particularly the use of classical music, was also groundbreaking."
+    },
+    "connections": {
+      "influenced_by": [],
+      "influenced": ["the-dark-knight-2008", "trainspotting-1996"],
+      "contemporaries": []
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in London, 1971. Lead with the sensory atmosphere — a neo-futuristic London, the ultraviolence, the Ludovico technique. Then the cultural significance — Kubrick's adaptation of Anthony Burgess's novel became a flashpoint in the argument over violence, free will, and how much control a society should have over the people in it. Avoid Wikipedia tone.",
+    "curator_notes": "Pair this with Drive My Car (2021) as a study of male consciousness and its discontents, though worlds apart in style and tone. Both films, in their own way, ask what it means to be human in a world that seems determined to strip us of our free will."
+  },
+  {
+    "id": "beasts-of-no-nation-west-africa-2015",
+    "primary_location": {
+      "city": "(Unnamed)",
+      "country": "West Africa",
+      "region": null,
+      "coordinates": [7.9465, -1.0232]
+    },
+    "additional_locations": [],
+    "year_set": 2015,
+    "year_released": 2015,
+    "location_thesis": "Warring West Africa is the setting, in a country the film never names. A group of children are recruited into a rebel army, the story unfolds and you witness the evil of war in real time through the lens of a child.",
+    "film": {
+      "title": "Beasts of No Nation",
+      "director": "Cary Joji Fukunaga",
+      "runtime_minutes": 137,
+      "language": "English / Twi",
+      "aspect_ratio": "2.39:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "The film never names its country or its war, and that's deliberate. The wars it echoes are real, like the Second Liberian Civil War (1999–2003), which devastated the country. Child soldiers were prevalent across West Africa during that tumultuous time.",
+      "cultural_moment": "A candid, real, and unflinching look into the war from the lens of a child soldier, and his comrades in arms.",
+      "why_it_matters": "This movie was a groundbreaking film, it told a story that was a rough watch but it was also a necessary watch. It opened the eyes of many who did not know how horrible these events can be.",
+      "formal_innovation": "The film's cinematography is stunning, with sweeping shots of the West African landscape that contrast sharply with the brutal violence of the conflict. It also features an incredible performance by Idris Elba as the brutal warlord. The color grading is amongst the best ever from a movie set in Africa."
+    },
+    "connections": {
+      "influenced_by": ["beasts-of-no-nation-novel-2005", "apocalypse-now-1979"],
+      "influenced": ["12-years-a-slave-2013", "moonlight-2016"],
+      "contemporaries": []
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in an unnamed West African country at war. Lead with the sensory atmosphere — the lush landscape, the brutal violence, the moment Agu is forced to become a soldier. Then the cultural significance — this is a Western film that tells the story of African children brutalized by war. Never name the country, the war, or a year. Avoid Wikipedia tone.",
+    "curator_notes": "Pair this with Apocalypse Now as a study of the dehumanizing effects of war. Consider this when sequencing daily moments. Shot in Ghana, mostly around Koforidua; the coordinates are an anchor, not the setting."
+  },
+  {
+    "id": "drive-my-car-hiroshima-2021",
+    "primary_location": {
+      "city": "Hiroshima",
+      "country": "Japan",
+      "region": "Chūgoku",
+      "coordinates": [34.4155, 132.4576]
+    },
+    "additional_locations": [
+      {
+        "city": "Tokyo",
+        "country": "Japan",
+        "coordinates": [35.6762, 139.6503],
+        "role": "Yusuke's life before Hiroshima"
+      }
+    ],
+    "year_set": 2021,
+    "year_released": 2021,
+    "location_thesis": "Hiroshima is a city of ghosts, haunted by the atomic bombing of 1945. It is a city of memory, where the past refuses to stay buried. It is a city of healing, where the wounds of the past are slowly beginning to mend.",
+    "film": {
+      "title": "Drive My Car",
+      "director": "Ryusuke Hamaguchi",
+      "runtime_minutes": 179,
+      "language": "Japanese / Korean / Mandarin / English",
+      "aspect_ratio": "2.35:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "Hiroshima in 2021, Japan was still dealing with the aftermath of the atomic bombing of 1945. It is a city of memory, where the past refuses to stay buried. It is a city of healing, where the wounds of the past are slowly beginning to mend.",
+      "cultural_moment": "Drive My Car, is a quiet yet profound exploration of grief, communication, and the healing power of art. It is a film that stays with you long after the credits roll, prompting reflection on loss, forgiveness, and the complex nature of human connection.",
+      "why_it_matters": "It won the Academy Award for Best International Feature Film in 2022, and was nominated for Best Picture. It is a must-watch for anyone interested in Japanese cinema, or in films that explore the complexities of the human condition.",
+      "formal_innovation": "Hamaguchi's deliberate pacing and understated direction create a contemplative atmosphere that invites viewers to immerse themselves in the characters' emotional journeys. The film's use of Chekhov's plays as a recurring motif adds layers of metatheatrical depth, exploring themes of identity, performance, and the search for meaning."
+    },
+    "connections": {
+      "influenced_by": ["chekhov-plays"],
+      "influenced": [],
+      "contemporaries": ["oldboy-2003"]
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in Hiroshima, 2021. Lead with the sensory atmosphere — the back seat of a red Saab 900 moving through a city that carries the weight of its history, and silences that say more than the dialogue. Then the weight of it — Yusuke rebuilding his life after a loss, one conversation at a time, while his cast rehearses Chekhov's Uncle Vanya in several languages at once. Avoid Wikipedia tone.",
+    "curator_notes": "This film is a must-watch for anyone interested in Japanese cinema, or in films that explore the complexities of the human condition and grief, communication, and the healing power of art."
+  },
+  {
+    "id": "friday-los-angeles-1995",
+    "primary_location": {
+      "city": "Los Angeles",
+      "country": "USA",
+      "region": "California",
+      "coordinates": [34.0522, -118.2437]
+    },
+    "additional_locations": [],
+    "year_set": 1995,
+    "year_released": 1995,
+    "location_thesis": "South Central Los Angeles in the 90's is the tone. Hip hop culture is rising rapidly along with police brutality, gang violence, and the crack epidemic.",
+    "film": {
+      "title": "Friday",
+      "director": "F. Gary Gray",
+      "runtime_minutes": 91,
+      "language": "English",
+      "aspect_ratio": "2.35:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "Los Angeles in 1995 — post-Rodney King riots, peak of the crack epidemic, gang violence, police brutality, hip hop culture at its peak global influence.",
+      "cultural_moment": "Friday captured black hood life in a nutshell, this resonated with black audiences like no other movie ever has. It's hyperreal and dangerous at times but it's also filled with the perfect amount of comedic moments. Chris Tucker's delivery is off the walls and Ice Cube's delivery is picture perfect deadpan comedy.",
+      "why_it_matters": "This movie shifted the culture and became a classic amongst all Americans and not just black people. It gave us so many catchphrases and inspired creators to tackle issues in black communities with a comedic touch.",
+      "formal_innovation": "Friday was one of the first movies to showcase black culture from a comedic standpoint. The movie was a comedy but when it got real, it got real. The balance was immaculate."
+    },
+    "connections": {
+      "influenced_by": ["do-the-right-thing-1989", "menace-ii-society-1993"],
+      "influenced": [],
+      "contemporaries": []
+    },
+    "llm_narrative_seed": "Imagine it's a hot day in South Central Los Angeles, 1995. Hip hop culture is thriving and so is drug and gang violence. The perfect time for a stoner comedy about two friends who just want to chill on their porch, on their day off. Avoid Wikipedia tone.",
+    "curator_notes": "Pair this with Menace II Society (1993) as 'the duality of life in the hood.'"
+  },
+  {
+    "id": "in-the-mood-for-love-hong-kong-2000",
+    "primary_location": {
+      "city": "Hong Kong",
+      "country": "China",
+      "region": "Wan Chai / Central",
+      "coordinates": [22.3193, 114.1694]
+    },
+    "additional_locations": [
+      {
+        "city": "Angkor Wat",
+        "country": "Cambodia",
+        "coordinates": [13.4125, 103.867],
+        "role": "Where Chow Mo-wan goes to bury his secret — the physical end of longing"
+      },
+      {
+        "city": "Singapore",
+        "country": "Singapore",
+        "coordinates": [1.3521, 103.8198],
+        "role": "Exile. The city where the affair that never happened is finally left behind"
+      }
+    ],
+    "year_set": 1962,
+    "year_released": 2000,
+    "location_thesis": "This is 1962 Hong Kong but it's really a specific pocket of it — Shanghainese expats living in identical cramped apartments, sharing walls, sharing silence. The geography of the film is claustrophobia by design.",
+    "film": {
+      "title": "In the Mood for Love",
+      "director": "Wong Kar-wai",
+      "runtime_minutes": 98,
+      "language": "Cantonese / Shanghainese",
+      "aspect_ratio": "1.66:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "Hong Kong 1962 — a Shanghainese diaspora community displaced by the Communist revolution, transplanted into a colony still under British rule. These are people carrying an entire culture in rented rooms. The political situation is backdrop, never stated. It's felt in every piece of furniture.",
+      "cultural_moment": "Wong Kar-wai shot for 15 months without a complete script. Maggie Cheung and Tony Leung were often told what to feel, not what to say. The film won Best Director at Cannes 2000 and landed like something that had always existed — immediately canonical.",
+      "why_it_matters": "It redefined what romantic cinema could do. This isn't about consummation, it's about restraint — what two people choose not to do and what that costs them. Shigeru Umebayashi's 'Yumeji's Theme' became one of the most recognizable cues in world cinema. The qipaos Maggie Cheung wears — 20 of them, all custom — became a cultural reference point for an entire aesthetic.",
+      "formal_innovation": "Slow-motion used as emotional punctuation, not stylistic decoration. The camera never shows the spouses' faces — you feel their presence, never see them. The framing is almost suffocating: doorframes, staircases, narrow corridors. Space mirrors feeling."
+    },
+    "connections": {
+      "influenced_by": ["chungking-express-1994", "days-of-being-wild-1990"],
+      "influenced": ["2046-2004", "the-grandmaster-2013"],
+      "contemporaries": ["yi-yi-2000", "crouching-tiger-hidden-dragon-2000"]
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in Hong Kong 1962. Lead with the sensory details — the stairwell they pass each other on, the smell of her food, the sound of rain on close walls. Then the weight of it — two people who have decided something without saying it out loud. No Wikipedia tone. Make it feel like standing in a narrow hallway.",
+    "curator_notes": "Pair with Chungking Express to show Wong Kar-wai's evolution — from kinetic longing to still longing. The Yumeji's Theme cue alone is worth building a sequence around. Consider this as the entry point for the 'distance as intimacy' thread in the collection."
+  },
+  {
+    "id": "kill-bill-vol-1-tokyo-2003",
+    "primary_location": {
+      "city": "Tokyo",
+      "country": "Japan",
+      "region": "Kantō",
+      "coordinates": [35.6762, 139.6503]
+    },
+    "additional_locations": [
+      {
+        "city": "Los Angeles",
+        "country": "USA",
+        "coordinates": [34.0522, -118.2437],
+        "role": "Beatrix's American life — the past she's avenging"
+      }
+    ],
+    "year_set": 2003,
+    "year_released": 2003,
+    "location_thesis": "Tokyo is the operatic center. The House of Blue Leaves is the gravitational core of the film. Tarantino's love letter to Japanese cinema lives here.",
+    "film": {
+      "title": "Kill Bill: Vol. 1",
+      "director": "Quentin Tarantino",
+      "runtime_minutes": 111,
+      "language": "English / Japanese",
+      "aspect_ratio": "2.35:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "Tokyo in 2003 — post-bubble economy, anime and manga at peak global influence, Japanese horror exploding internationally with Ringu and Ju-On.",
+      "cultural_moment": "Tarantino's love letter to Japanese cinema — chanbara, yakuza films, anime — synthesized through American grindhouse sensibility. The House of Blue Leaves sequence directly references Lady Snowblood (1973).",
+      "why_it_matters": "Bridged Japanese genre cinema to Western mainstream audiences. Influenced a generation of filmmakers to take 'low' Asian genre seriously as cinematic language.",
+      "formal_innovation": "Anime sequence (animated by Production I.G), black-and-white shift during the climax, deliberate aspect-ratio play."
+    },
+    "connections": {
+      "influenced_by": ["lady-snowblood-1973", "lone-wolf-and-cub-1972"],
+      "influenced": ["atomic-blonde-2017", "john-wick-2014"],
+      "contemporaries": ["oldboy-2003"]
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in Tokyo 2003. Lead with the sensory atmosphere — neon, the House of Blue Leaves, the moment Beatrix arrives. Then the cultural significance — this is a Western film that takes Japanese cinema seriously. Avoid Wikipedia tone.",
+    "curator_notes": "Pair this with Oldboy (2003) as 'the year Asian genre cinema went global.' Consider this when sequencing daily moments."
+  },
+  {
+    "id": "sinners-clarksdale-2025",
+    "primary_location": {
+      "city": "Clarksdale",
+      "country": "USA",
+      "region": "Mississippi",
+      "coordinates": [34.2001, -90.5709]
+    },
+    "additional_locations": [],
+    "year_set": 1932,
+    "year_released": 2025,
+    "location_thesis": "1932 Mississippi delta, the birth of the blues and joy of black and Asian cultures colliding in a deeply racist society. Things heat up as notorious twins Smoke and Stack return to town to purchase a juke joint.",
+    "film": {
+      "title": "Sinners",
+      "director": "Ryan Coogler",
+      "runtime_minutes": 137,
+      "language": "English",
+      "aspect_ratio": "2.76:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "This is the Jim Crow era in the south, so racism is rampant. There are social and economic factors that contribute to the oppression of colored groups in America. One thing they do have is music and this is the light at the end of the tunnel, the birth of the blues.",
+      "cultural_moment": "Ryan Coogler's follow-up to Creed III and Black Panther. It feels authentic and tells a hidden story of black and Asian communities coexisting in a dangerous world with all the cards stacked against them. This movie could change the game for black directors in Hollywood.",
+      "why_it_matters": "This film informs the viewer, entertains the viewer, and leaves you begging to learn more about the world Ryan Coogler created.",
+      "formal_innovation": "Ryan Coogler shows Michael B. Jordan as two different characters since he played twins. The famous scene when they are in the juke joint and Miles Caton is singing while the camera pans around, you see the different time periods flash before your eyes, this is when the story truly unfolds."
+    },
+    "connections": {
+      "influenced_by": [],
+      "influenced": [],
+      "contemporaries": ["oldboy-2003"]
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in 1932 Mississippi delta. Lead with the sensory atmosphere — the juke joint, the music, the collision of black and asian cultures. Then the cultural significance — this is a Western film that takes Asian and Black culture seriously. Avoid Wikipedia tone.",
+    "curator_notes": "Pair this with From Dusk Till Dawn or Django."
+  },
+  {
+    "id": "the-harder-they-fall-redwood-2021",
+    "primary_location": {
+      "city": "Redwood (fictional)",
+      "country": "USA",
+      "region": "The American West",
+      "coordinates": [35.687, -105.9378]
+    },
+    "additional_locations": [],
+    "year_set": null,
+    "year_released": 2021,
+    "location_thesis": "",
+    "film": {
+      "title": "The Harder They Fall",
+      "director": "Jeymes Samuel",
+      "runtime_minutes": 139,
+      "language": "English",
+      "aspect_ratio": "2.35:1",
+      "poster_url": null,
+      "still_urls": []
+    },
+    "category": "cultural_classic",
+    "facts": {
+      "historical_context": "The wild wild west, outlaws are abundant and the law is scarce. Not many are as legendary as Nat Love.",
+      "cultural_moment": "The movie brings black cowboys to the forefront, a group that seems to be forgotten in history, especially in the world of movies.",
+      "why_it_matters": "This movie informs the viewer on the contributions of black men in cowboy culture and the wild west. It shows that there were black cowboys and that they were just as skilled and influential as their white counterparts.",
+      "formal_innovation": "The film's production design and cinematography draw heavy inspiration from classic Westerns, particularly those of Sergio Leone and John Ford. The costume design and setting were immaculately done."
+    },
+    "connections": {
+      "influenced_by": [],
+      "influenced": [],
+      "contemporaries": []
+    },
+    "llm_narrative_seed": "Generate a 2-3 sentence narrative in second person ('You') placing the viewer in a frontier town in the American West. Lead with the sensory atmosphere — outlaws everywhere, the law nowhere to be found, and Nat Love's name already a legend. Then the cultural significance — this film puts black cowboys at the front of a genre that left them out of its history. Avoid Wikipedia tone.",
+    "curator_notes": "Pair this with Django or The Hateful 8. Redwood and Maysville are invented towns, shot at Cerro Pelon Movie Ranch near Santa Fe; the coordinates point at Santa Fe."
+  }
+]
