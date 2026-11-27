@@ -1,0 +1,206 @@
+/* Moments components. Everything reads from tokens.css. */
+
+/* ── Labels ─────────────────────────────────────────── */
+.label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.label--red { color: var(--red); }
+
+/* ── Header: wordmark + where you are ───────────────── */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  padding: 20px var(--gutter) 16px;
+  border-bottom: 1px solid var(--line);
+}
+.wordmark {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin: 0;
+}
+.app-header__where {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+/* ── Headline (Saved, Map) ──────────────────────────── */
+.headline {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-head);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Film frame: the film's real aspect ratio ───────── */
+.frame {
+  padding: 10px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+}
+.frame__image {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  /* Placeholder light: stands in for a still. Same in both modes, like a projected image. */
+  background:
+    radial-gradient(circle, rgba(239, 234, 217, 0.1) 1px, transparent 1.2px) 0 0 / 7px 7px,
+    linear-gradient(105deg, #3d351c 0%, #26211a 30%, #121010 50%, #3a1f1c 72%, #8f3d31 100%);
+}
+.frame__ratio {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  padding: 4px 8px;
+  background: rgba(10, 9, 7, 0.82);
+  color: #efead9;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-label);
+  letter-spacing: 0.1em;
+}
+
+/* ── Field rows: red label, bold mono value ─────────── */
+.fields { margin: 0; }
+.field {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 12px;
+  align-items: baseline;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.field dt {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-label);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--red);
+}
+.field dd {
+  margin: 0;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-field);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.field--title dd { font-size: var(--t-title); letter-spacing: 0.04em; line-height: 1.15; }
+
+/* ── Prose ──────────────────────────────────────────── */
+.thesis {
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  color: var(--ink-mute);
+}
+.quote {
+  margin: 0;
+  font-size: var(--t-quote);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-wrap: pretty;
+}
+
+/* ── Pill buttons ───────────────────────────────────── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 24px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-meta);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 120ms ease;
+}
+.pill:active { transform: scale(0.98); }
+.pill--filled { background: var(--ink); color: var(--paper); }
+.pill:disabled { cursor: not-allowed; opacity: 0.45; }
+/* Built but not wired yet: keeps its full look so the design reads true. */
+.pill[aria-disabled='true'] { cursor: not-allowed; }
+.pill[aria-disabled='true']:active { transform: none; }
+.pill-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+/* ── Round icon button (menu, close) ────────────────── */
+.round-btn {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* ── Tab bar ────────────────────────────────────────── */
+.tabbar {
+  display: flex;
+  gap: 8px;
+  padding: 8px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+.tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 0;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
+  color: var(--ink-mute);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.tab__dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  display: grid;
+  place-items: center;
+  font-size: var(--t-label);
+  letter-spacing: 0;
+}
+.tab[aria-current='page'] { background: var(--paper-raised); color: var(--ink); }
+.tab:disabled { cursor: default; opacity: 0.6; }

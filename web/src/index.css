@@ -1,0 +1,45 @@
+@import './styles/tokens.css';
+@import './styles/components.css';
+
+/* App layout: one phone-width column, centered on larger screens. */
+html, body, #root { height: 100%; }
+
+.shell {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.screen {
+  width: 100%;
+  max-width: var(--column);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: var(--paper);
+}
+
+@media (min-width: 520px) {
+  .screen { border-inline: 1px solid var(--line); }
+}
+
+.today {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px var(--gutter) 32px;
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
+  animation: arrive 360ms ease-out;
+}
+.today .fields { margin-top: -4px; }
+.today__eyebrow { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+.tabbar { position: sticky; bottom: 0; }
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}

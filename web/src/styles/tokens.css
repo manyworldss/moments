@@ -1,0 +1,99 @@
+/* Moments design tokens.
+   Paper, ink and brick red from the original prototype. Dark mode flips paper and ink; the red stays.
+   Light values are the default. Dark applies from the system setting, or from data-theme="dark"
+   on any element (the design page uses that to show both modes side by side). */
+
+@font-face {
+  font-family: 'Moments Mono';
+  src: url('../fonts/dejavu-sans-mono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Moments Mono';
+  src: url('../fonts/dejavu-sans-mono-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root,
+[data-theme='light'] {
+  --paper: #efead9;        /* background */
+  --paper-raised: #e5dfcb; /* frames, cards, active tab */
+  --ink: #1a1614;          /* text, filled buttons */
+  --ink-mute: #6b6258;     /* secondary text */
+  --line: #cfc7b2;         /* hairlines */
+  --red: #b23a1b;          /* labels and accents (darker in light mode to pass 4.5:1 on paper) */
+  --dot: rgba(26, 22, 20, 0.14);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0a0907;
+    --paper-raised: #14110e;
+    --ink: #efead9;
+    --ink-mute: #9c9484;
+    --line: #2a241f;
+    --red: #d9552f;
+    --dot: rgba(239, 234, 217, 0.07);
+    color-scheme: dark;
+  }
+}
+
+[data-theme='dark'] {
+  --paper: #0a0907;
+  --paper-raised: #14110e;
+  --ink: #efead9;
+  --ink-mute: #9c9484;
+  --line: #2a241f;
+  --red: #d9552f;
+  --dot: rgba(239, 234, 217, 0.07);
+  color-scheme: dark;
+}
+
+:root {
+  --font-mono: 'Moments Mono', Menlo, 'DejaVu Sans Mono', ui-monospace, monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+  /* Type scale */
+  --t-micro: 10px;   /* tab labels, ratio tag */
+  --t-label: 11px;   /* tracked uppercase labels */
+  --t-meta: 13px;    /* header metadata, buttons */
+  --t-field: 16px;   /* field values */
+  --t-body: 16px;    /* prose */
+  --t-title: 22px;   /* the film title row */
+  --t-head: 40px;    /* screen headlines (TRIPS SAVED ON THIS DEVICE.) */
+  --t-quote: 34px;   /* trip narrative */
+
+  --track-label: 0.18em;
+  --gutter: 24px;
+  --column: 440px;   /* the app is a phone-width column, centered on larger screens */
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* The signature dot texture. Static: no ambient CPU cost. */
+.dots {
+  background-image: radial-gradient(circle, var(--dot) 1px, transparent 1.2px);
+  background-size: 14px 14px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
