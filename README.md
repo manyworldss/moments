@@ -9,6 +9,8 @@ Each moment is one film, in one city, in one year.
 - `data/moments.json`: every moment. This is the source of truth and is edited by hand.
 - `data/REVIEW.md`: open questions about the data.
 - `scripts/validate-moments.mjs`: checks the data against the schema.
+- `data/rotation.json`: the order moments appear in, one a day.
+- `web/`: the web app. See `web/README.md`.
 
 ## Check the data
 
