@@ -1,5 +1,6 @@
 @import './styles/tokens.css';
 @import './styles/components.css';
+@import './styles/welcome.css';
 
 /* App layout: one phone-width column, centered on larger screens. */
 html, body, #root { height: 100%; }

@@ -36,6 +36,7 @@
     --ink-mute: #9c9484;
     --line: #2a241f;
     --red: #d9552f;
+    --map-land: #a8a090; /* dimmed so the map doesn't glare at night */
     --dot: rgba(239, 234, 217, 0.07);
     color-scheme: dark;
   }
@@ -48,6 +49,7 @@
   --ink-mute: #9c9484;
   --line: #2a241f;
   --red: #d9552f;
+  --map-land: #a8a090; /* dimmed so the map doesn't glare at night */
   --dot: rgba(239, 234, 217, 0.07);
   color-scheme: dark;
 }

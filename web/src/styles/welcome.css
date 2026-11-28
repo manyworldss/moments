@@ -1,0 +1,234 @@
+/* First-run welcome and the countdown into today's trip. */
+
+.welcome {
+  width: 100%;
+  max-width: var(--column);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: calc(20px + env(safe-area-inset-top, 0px)) var(--gutter) calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+/* ── Title card (from the original prototype) ───────── */
+.welcome--title { text-align: center; }
+.welcome__center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+.welcome__wordmark {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(44px, 13vw, 56px);
+  letter-spacing: 0.02em;
+  animation: rise 900ms cubic-bezier(0.2, 0.7, 0.1, 1) both;
+}
+.welcome__tagline {
+  margin: 0;
+  max-width: 19em;
+  color: var(--ink-mute);
+  font-size: var(--t-body);
+  line-height: 1.45;
+  animation: rise 900ms cubic-bezier(0.2, 0.7, 0.1, 1) 250ms both;
+}
+.welcome--title .welcome__foot { justify-content: center; animation: rise 900ms ease 600ms both; }
+.welcome__begin { min-width: 9.5rem; }
+
+/* ── Steps ──────────────────────────────────────────── */
+.welcome__top { display: flex; justify-content: space-between; align-items: center; }
+.welcome__skip {
+  border: 0;
+  background: none;
+  padding: 10px 0 10px 16px;
+  cursor: pointer;
+}
+.welcome__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 28px 0;
+}
+.welcome__title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(32px, 9.5vw, 40px);
+  line-height: 1.02;
+  text-transform: uppercase;
+}
+.welcome__visual { margin: 6px 0; }
+.welcome__text {
+  margin: 0;
+  max-width: 24em;
+  color: var(--ink-mute);
+  font-size: var(--t-body);
+  line-height: 1.55;
+}
+/* Each line arrives a beat after the last. */
+.welcome__in { animation: rise 700ms cubic-bezier(0.2, 0.7, 0.1, 1) calc(var(--n) * 120ms + 80ms) both; }
+
+.welcome__foot { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.welcome__foot .pill { min-width: 9.5rem; }
+.welcome__ticks { display: flex; gap: 6px; }
+.welcome__ticks span { width: 18px; height: 3px; background: var(--line); transition: background 300ms; }
+.welcome__ticks span.is-on { background: var(--ink); }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ── Day strip: yesterday, today, tomorrow ──────────── */
+.daystrip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.daystrip__day { display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0.45; }
+.daystrip__day.is-today { opacity: 1; }
+.daystrip__date, .daystrip__tag {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-micro);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.daystrip__tag { color: var(--ink-mute); }
+.daystrip__day.is-today .daystrip__tag { color: var(--red); }
+.daystrip__cell {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border: 1.5px solid var(--ink);
+  background:
+    radial-gradient(circle, rgba(239, 234, 217, 0.1) 1px, transparent 1.2px) 0 0 / 6px 6px,
+    linear-gradient(160deg, #3d351c, #121010 55%, #8f3d31);
+  filter: grayscale(1);
+}
+.daystrip__day.is-today .daystrip__cell { filter: none; animation: today-pulse 2.4s ease-in-out 800ms infinite; }
+@keyframes today-pulse { 50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--red) 25%, transparent); } }
+
+/* ── Ratio morph: one screen, letterboxed ───────────── */
+.ratiomorph {
+  position: relative;
+  aspect-ratio: 1.37;
+  background: var(--ink);
+}
+.ratiomorph__screen {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(239, 234, 217, 0.1) 1px, transparent 1.2px) 0 0 / 7px 7px,
+    linear-gradient(105deg, #3d351c 0%, #26211a 30%, #121010 50%, #3a1f1c 72%, #8f3d31 100%);
+  transition: clip-path 700ms cubic-bezier(0.6, 0, 0.2, 1);
+}
+.ratiomorph__label { transition: bottom 700ms cubic-bezier(0.6, 0, 0.2, 1); }
+
+/* ── Leader countdown ───────────────────────────────── */
+.leader {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  border: 0;
+  padding: 0;
+  background: #0a0907;
+  color: #efead9;
+  cursor: pointer;
+  animation: leader-in 300ms ease-out both;
+}
+.leader__svg { position: absolute; width: min(86vw, 420px); height: auto; }
+.leader__svg line, .leader__svg circle { fill: none; stroke: #efead9; stroke-opacity: 0.35; stroke-width: 1; }
+/* A circle with a stroke as wide as its radius draws a filled wedge as it sweeps. */
+.leader__sweep {
+  stroke: #efead9 !important;
+  stroke-opacity: 0.16 !important;
+  stroke-width: 66 !important;
+  stroke-dasharray: 100 100;
+  transform: rotate(-90deg);
+  transform-origin: 100px 100px;
+  animation: sweep 800ms linear both;
+}
+.leader__n {
+  position: relative;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: min(36vw, 170px);
+  line-height: 1;
+  animation: flicker 800ms steps(1) both;
+}
+@keyframes sweep { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+@keyframes flicker { 0% { opacity: 0.6; } 6% { opacity: 1; } 50% { opacity: 0.92; } 56% { opacity: 1; } }
+@keyframes leader-in { from { opacity: 0; } }
+
+/* ── Ticket stub ────────────────────────────────────── */
+.ticket {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 22px 28px;
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  overflow: hidden;
+}
+.ticket__admit { font-weight: 700; font-size: 28px; letter-spacing: 0.08em; }
+.ticket__terms { font-weight: 700; font-size: var(--t-label); letter-spacing: var(--track-label); color: var(--red); }
+.ticket__no { font-size: var(--t-micro); letter-spacing: 0.14em; color: var(--ink-mute); border-top: 1.5px dashed var(--line); padding-top: 10px; }
+/* Punched notches: half circles in the page colour, bitten into each side. */
+.ticket::before,
+.ticket::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 22px;
+  margin-top: -11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: var(--paper);
+}
+.ticket::before { left: -12.5px; }
+.ticket::after { right: -12.5px; }
+
+/* ── World drift: the welcome backdrop ──────────────── */
+.welcome--title { position: relative; isolation: isolate; }
+.welcome--title > :not(.drift) { position: relative; z-index: 1; }
+.drift {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  pointer-events: none;
+  /* Quiet behind the title, fully there at the edges. */
+  -webkit-mask-image: radial-gradient(ellipse 60% 22% at 50% 47%, rgba(0, 0, 0, 0.18), #000 100%);
+  mask-image: radial-gradient(ellipse 60% 22% at 50% 47%, rgba(0, 0, 0, 0.18), #000 100%);
+  animation: drift-in 1600ms ease-out both;
+}
+.drift__strip {
+  display: flex;
+  height: min(62vh, 560px);
+  transform: translateX(-12%);
+  animation: drift 100s linear -24s infinite;
+}
+.drift__sheet { height: 100%; width: auto; flex: none; overflow: visible; }
+.drift__land { fill: var(--ink); opacity: 0.2; }
+.drift__route { fill: none; stroke: var(--red); stroke-width: 0.18; stroke-dasharray: 0.6 0.6; opacity: 0.7; }
+.drift__pin { fill: var(--red); }
+.drift__ring { fill: none; stroke: var(--red); stroke-width: 0.15; opacity: 0.6; }
+.drift__label {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.25px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  fill: var(--ink-mute);
+}
+.drift__traveller { fill: var(--ink); }
+@keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes drift-in { from { opacity: 0; } }

@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "fonts": "node scripts/build-fonts.mjs",
-    "maps": "node scripts/build-maps.mjs"
+    "maps": "node scripts/build-maps.mjs",
+    "world": "node scripts/build-world.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

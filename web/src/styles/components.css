@@ -135,7 +135,7 @@
 /* ── City map: land in ink, streets in paper, sea is the page ── */
 .citymap { margin: 0; min-width: 0; }
 .citymap__svg { display: block; width: 100%; height: auto; overflow: hidden; }
-.citymap__land { fill: var(--ink); }
+.citymap__land { fill: var(--map-land, var(--ink)); }
 .citymap__sea { fill: var(--paper); }
 .citymap__gridline { fill: none; stroke: var(--paper); stroke-opacity: 0.16; stroke-width: 0.8; }
 /* No map yet: a blank sheet of the same grid, in ink. */
@@ -323,3 +323,31 @@
 }
 .tab[aria-current='page'] { background: var(--paper-raised); color: var(--ink); }
 .tab:disabled { cursor: default; opacity: 0.6; }
+
+/* ── Film head: the film is the title, the place its subtitle ── */
+.film-head { display: grid; gap: 10px; }
+.film-head__title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(28px, 8.5vw, 36px);
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.film-head__where {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.film-head__pin { width: 7px; height: 7px; border-radius: 50%; background: var(--red); flex: none; }
+
+/* ── The place: map, year and location ──────────────── */
+.place { display: grid; gap: 14px; padding-top: 18px; border-top: 1px solid var(--line); }
+.place .hero__tags { margin-top: 0; }

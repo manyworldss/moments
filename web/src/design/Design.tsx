@@ -90,7 +90,7 @@ export function Design() {
         <div className="ds-pair">
           {(['light', 'dark'] as const).map((t) => (
             <div key={t} data-theme={t} className="ds-phone dots">
-              <TodayScreen moment={moment} isToday={offset === 0} onAnother={() => setOffset((o) => o + 1)} />
+              <TodayScreen moment={moment} isToday={offset === 0} onAnother={() => setOffset((o) => o + 1)} date={today} />
             </div>
           ))}
         </div>

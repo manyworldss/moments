@@ -73,3 +73,14 @@ export function ratioValue(aspect: string): number {
   const r = Number(w) / Number(h)
   return Number.isFinite(r) && r > 0 ? r : 1.85
 }
+
+/** The city as shown: notes in brackets dropped; empty when the data has no real city ("(Unnamed)"). */
+export function cityName(loc: Location): string {
+  return loc.city.replace(/\s*\(.*\)/, '').trim()
+}
+
+/** "Clarksdale, USA", or just "West Africa" when there's no city. */
+export function placeLabel(loc: Location, sep = ', '): string {
+  const city = cityName(loc)
+  return city ? `${city}${sep}${loc.country}` : loc.country
+}

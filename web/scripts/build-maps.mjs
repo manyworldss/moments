@@ -25,8 +25,15 @@ const outDir = join(here, '..', 'src', 'maps')
 // Per-moment framing. `center` defaults to the moment's coordinates; set it
 // when the map reads better framed around something else (the red dot always
 // sits on the moment's real coordinates). `span` is width × height in km.
+// `lite: true` leaves out residential streets (for very dense cities).
 const MAPS = {
   'in-the-mood-for-love-hong-kong-2000': { center: [22.3, 114.172], span: [8, 5.6] },
+  'sinners-clarksdale-2025': { span: [5, 3.5] },
+  'drive-my-car-hiroshima-2021': { center: [34.398, 132.457], span: [9, 6.3] },
+  'friday-los-angeles-1995': { span: [8, 5.6] },
+  'a-clockwork-orange-london-1971': { span: [8, 5.6], lite: true },
+  'kill-bill-vol-1-tokyo-2003': { span: [8, 5.6] },
+  'beasts-of-no-nation-west-africa-2015': { span: [30, 21] },
 }
 
 const W = 600 // viewBox width; height follows the span's aspect
@@ -242,6 +249,8 @@ async function build(id, moments) {
   const [lat0, lon0] = cfg.center ?? [dotLat, dotLon]
   const [spanW, spanH] = cfg.span ?? [8, 5.6]
   const H = Math.round((W * spanH) / spanW)
+  // `lite` drops residential streets for very dense cities, to keep the file small.
+  const minorSet = cfg.lite ? new Set(['tertiary', 'secondary_link', 'tertiary_link']) : MINOR
 
   const kmPerDegLat = 110.574
   const kmPerDegLon = 111.32 * Math.cos((lat0 * Math.PI) / 180)
@@ -267,7 +276,7 @@ async function build(id, moments) {
       if (t.natural === 'coastline') coast.push(el.geometry)
       else if (t.natural === 'water' || t.waterway === 'riverbank') water.push([[el.geometry], []])
       else if (MAJOR.has(t.highway)) major.push(el.geometry)
-      else if (MINOR.has(t.highway)) minor.push(el.geometry)
+      else if (minorSet.has(t.highway)) minor.push(el.geometry)
       else if (t.railway === 'rail' && !t.tunnel) rail.push(el.geometry)
     } else if (el.type === 'relation' && el.members) {
       const outer = el.members.filter((m) => m.type === 'way' && m.role !== 'inner' && m.geometry).map((m) => m.geometry)
