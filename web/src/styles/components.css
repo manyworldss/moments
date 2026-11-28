@@ -77,6 +77,125 @@
   letter-spacing: 0.1em;
 }
 
+/* ── Tag: small ink chip with a red square ──────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 8px 4px 7px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+}
+
+/* ── Hero: city map beside the year ─────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+}
+.hero__tags {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: -6px;
+}
+.hero__right { text-align: right; }
+.hero__value {
+  margin: 8px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.hero__sep { color: var(--ink-mute); }
+.hero__sub {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: var(--t-micro);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.hero__right .hero__sub { margin-top: 8px; }
+
+/* ── City map: land in ink, streets in paper, sea is the page ── */
+.citymap { margin: 0; min-width: 0; }
+.citymap__svg { display: block; width: 100%; height: auto; overflow: hidden; }
+.citymap__land { fill: var(--ink); }
+.citymap__sea { fill: var(--paper); }
+.citymap__gridline { fill: none; stroke: var(--paper); stroke-opacity: 0.16; stroke-width: 0.8; }
+/* No map yet: a blank sheet of the same grid, in ink. */
+.citymap__svg:not(.is-drawn) { background: var(--paper-raised); }
+.citymap__svg:not(.is-drawn) .citymap__gridline { stroke: var(--ink); stroke-opacity: 0.1; }
+.citymap__minor, .citymap__major, .citymap__rail { fill: none; stroke: var(--paper); stroke-linecap: round; stroke-linejoin: round; }
+.citymap__minor { stroke-width: 1; stroke-opacity: 0.42; }
+.citymap__major { stroke-width: 2.4; stroke-opacity: 0.92; }
+.citymap__rail { stroke-width: 1.4; stroke-dasharray: 5 4; stroke-opacity: 0.6; }
+.citymap__dot { fill: var(--red); stroke: var(--paper); stroke-width: 2.5; }
+.citymap__halo { fill: var(--red); opacity: 0.28; }
+.citymap__note {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.18em;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  fill: var(--ink-mute);
+}
+.citymap__credit {
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: var(--ink-mute);
+}
+
+/* Develop: the map prints in row by row, then the pin lands and breathes. */
+.citymap__svg.is-drawn { animation: develop 1100ms steps(14, end) both; }
+.citymap__dot, .citymap__halo { transform-box: fill-box; transform-origin: center; }
+.citymap__dot { animation: pin-in 420ms cubic-bezier(0.3, 1.6, 0.5, 1) 1100ms both; }
+.citymap__halo { animation: pin-in 420ms ease-out 1100ms both, breathe 2.4s ease-in-out 1600ms infinite; }
+@keyframes develop {
+  from { clip-path: inset(0 0 100% 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes pin-in { from { transform: scale(0); } }
+@keyframes breathe { 50% { transform: scale(1.5); opacity: 0.08; } }
+
+/* ── Year counter: digits roll into place ───────────── */
+.yearroll {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: clamp(52px, 15vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.yearroll__row { display: flex; justify-content: flex-end; }
+.yearroll__row + .yearroll__row { margin-top: -0.1em; }
+.yearroll__digit { display: block; height: 1em; overflow: hidden; }
+.yearroll__strip {
+  display: flex;
+  flex-direction: column;
+  transform: translateY(calc(var(--to) * -1em));
+  animation: roll 1000ms cubic-bezier(0.16, 0.84, 0.24, 1) calc(var(--i) * 90ms + 120ms) both;
+}
+.yearroll__strip > span { display: block; height: 1em; line-height: 1; }
+@keyframes roll { from { transform: translateY(0); } }
+
 /* ── Field rows: red label, bold mono value ─────────── */
 .fields { margin: 0; }
 .field {

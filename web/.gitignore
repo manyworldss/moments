@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw OpenStreetMap downloads (npm run maps)
+scripts/.osm-cache/

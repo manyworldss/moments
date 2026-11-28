@@ -26,6 +26,18 @@ Open the printed URL. `npm run dev` also prints a network URL you can open on yo
 
 `data/rotation.json` lists moment ids in editorial order. Day 0 is `start_date`; each day moves one step and wraps around. Everyone sees the same moment on the same date. Another steps forward through the same order. Moments missing `year_set` or `location_thesis` are skipped.
 
+## City maps
+
+Each moment's map is drawn from OpenStreetMap data at build time, not loaded from a map service, so the app still makes no outside requests.
+
+- `npm run maps` builds every map listed in `MAPS` at the top of `scripts/build-maps.mjs`. `npm run maps -- <moment-id>` builds one.
+- Add a moment to `MAPS` to give it a map. `center` and `span` (km) set the framing; the red dot always sits on the moment's real coordinates.
+- Output goes to `src/maps/<moment-id>.json` (committed). Raw downloads are cached in `scripts/.osm-cache/` (not committed).
+- Moments without a map show a blank grid that says so.
+- Map data is © OpenStreetMap contributors (ODbL). The credit shows under every map and must stay.
+
+Preview any moment with `?moment=<id>`, e.g. `/?moment=in-the-mood-for-love-hong-kong-2000`.
+
 ## Fonts
 
 - Mono: DejaVu Sans Mono, the open font Apple's Menlo is based on. `npm run fonts` rebuilds the trimmed woff2 files in `src/fonts/` from the `dejavu-fonts-ttf` package. Its license is in `src/fonts/DEJAVU-LICENSE.txt`.

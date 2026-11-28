@@ -61,6 +61,12 @@ export const categoryLabel: Record<Moment['category'], string> = {
   hidden_gem: 'Hidden gem',
 }
 
+/** [22.3193, 114.1694] → "22.319°N 114.169°E" */
+export function formatCoords([lat, lon]: [number, number]): string {
+  const f = (v: number, pos: string, neg: string) => `${Math.abs(v).toFixed(3)}°${v >= 0 ? pos : neg}`
+  return `${f(lat, 'N', 'S')} ${f(lon, 'E', 'W')}`
+}
+
 /** "2.35:1" → 2.35 */
 export function ratioValue(aspect: string): number {
   const [w, h = '1'] = aspect.split(':')

@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "fonts": "node scripts/build-fonts.mjs"
+    "fonts": "node scripts/build-fonts.mjs",
+    "maps": "node scripts/build-maps.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
